@@ -1,9 +1,11 @@
-def same_point(point1, point2):
-    if point1 == point2:
-        return True
+def count_unique_visitors(visitors):
+    results = []
+    for visitor in visitors:
+        if visitor not in results:
+            results.append(visitor)
+    return len(results)
 
-    else:
-        return False
-same_point((1,2), (1, 2))
-same_point((1, 2), (2, 1))
-same_point((0, 0), (0, 0))
+count_unique_visitors(["Ada", "Bola", "Ada"])
+count_unique_visitors([])
+count_unique_visitors(["Chidi"])
+count_unique_visitors(["Ada", "Ada", "Ada"])
