@@ -1,12 +1,17 @@
-def remove_duplicates(items):
-    lists = []
-    for item in items:
-        if item not in lists:
-            lists.append(item)
+def analyze_survey(responses):
+    tally = {}
+    # TODO: loop through `responses` and populate `tally`
+    for item in responses:
+        
 
-    return lists
+    if not tally:
+        return {"tally": {}, "most_popular": None}
 
-remove_duplicates([1, 2, 2, 3, 1])
-remove_duplicates(["a", "b", "a", "c"])
-remove_duplicates([])
-remove_duplicates([5, 5, 5])
+    most_popular = None
+    highest_count = 0
+
+    
+    # TODO: loop through `tally` to find the color with the highest count
+    # (keep the first one seen in case of a tie)
+
+    return {"tally": tally, "most_popular": most_popular}
