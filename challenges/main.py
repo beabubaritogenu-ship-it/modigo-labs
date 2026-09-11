@@ -1,17 +1,26 @@
-def analyze_survey(responses):
-    tally = {}
-    # TODO: loop through `responses` and populate `tally`
-    for item in responses:
-        
+def run_with_retries(results, max_attempts=3, on_failure="skip", log=None):
+    # TODO: handle the mutable default argument problem correctly —
+    # do not use a mutable object like [] directly as a default value.
+    # Then simulate retrying through `results` according to the rules described.
 
-    if not tally:
-        return {"tally": {}, "most_popular": None}
+    if log == None:
+        log = []
+    attempts = 0
 
-    most_popular = None
-    highest_count = 0
+    for outcome in results:
+        if attempts >= max_attempts:
+            break
+        attempts +=1
+        if outcome == "success":
+            log.append("success")
+            break
 
-    
-    # TODO: loop through `tally` to find the color with the highest count
-    # (keep the first one seen in case of a tie)
+        elif outcome == "fail":
+            if on_failure == "log":
+                log.append("attempt failed")
 
-    return {"tally": tally, "most_popular": most_popular}
+            elif on_failure == "skip":
+                continue
+
+
+    return log
