@@ -1,6 +1,4 @@
-def count_unique_coordinates(coordinates):
-    unique = []
-    for coord in coordinates:
-        if coord not in unique:
-            unique.append(coord)
-    return len(set(unique))
+def apply_discount(price, discount_percent=10):
+    if not discount_percent:
+        discount_percent = 0
+    return round(price - (price * discount_percent / 100), 2)
